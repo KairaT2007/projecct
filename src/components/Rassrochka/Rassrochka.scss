@@ -1,0 +1,72 @@
+.rassrochka {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    gap: 20px;
+
+    h1 {
+        font-family: 'Teko', sans-serif;
+        font-size: 70px;
+        letter-spacing: 5px;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+
+        &__image {
+            width: 50%;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Archivo Narrow', sans-serif;
+            text-align: center;
+            width: 50%;
+
+            p {
+                width: 60%;
+                font-size: 30px;
+            }
+
+            h3 {
+                margin: 0px;
+                font-size: 50px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rassrochka__block__text p {
+        font-size: 20px;
+    }
+
+    .rassrochka__block__text h3 {
+        font-size: 40px;
+    }
+
+    .rassrochka h1 {
+        font-family: "Teko", sans-serif;
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+
+    .rassrochka__block__text p {
+        width: 100%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .rassrochka__block__text p {
+        width: 100%;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,123 @@
+.h {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+    background-color: rgba(0, 0, 0, 0.008);
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        img {
+            width: 50px;
+            border-radius: 50%;
+        }
+    }
+
+    .models {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 96px;
+        height: 45px;
+        cursor: pointer;
+        position: absolute;
+        right: 47%;
+
+        img {
+            height: 45px;
+        }
+    }
+
+    .buttons {
+
+        .close:hover,
+        .close:focus {
+            box-shadow:
+                inset -3.5em 0 0 0 var(--hover),
+                inset 4em 0 0 0 var(--hover);
+        }
+
+        $colors: (
+            close: #ffffff,
+        );
+
+    @each $button,
+    $color in $colors {
+        .#{$button} {
+            --color: #{$color};
+            --hover: #{adjust-hue($color, 45deg)};
+        }
+    }
+
+    button {
+        color: var(--color);
+        transition: 0.25s;
+
+        &:hover,
+        &:focus {
+            border-color: var(--hover);
+            color: rgb(0, 0, 0);
+        }
+    }
+
+    button {
+        background: none;
+        border: 1px solid;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+        border-radius: 5px;
+    }
+
+    button:active {
+        transform: scale(0.9);
+    }
+}
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .h .user img {
+        width: 25px;
+    }
+
+    .h .user span {
+        font-size: 10px;
+    }
+
+    .h .logo img {
+        height: 25px;
+    }
+
+    .h .logo {
+        right: 35%;
+        top: 15px;
+    }
+
+    .h .buttons button {
+        padding: 0.5em 0.5em;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .h .user span {
+        font-size: 7px;
+    }
+
+    .h .logo {
+        right: 30%;
+        top: 15px;
+    }
+}
